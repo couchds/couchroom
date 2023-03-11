@@ -15,10 +15,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-          <Navbar />
-          <main className={styles.main}>
-            <Typography>Hello, this is my personal website. We&apos;ll see what happens with it!</Typography>
-        </main>
+      <Navbar />
+      <main className={styles.main}>
+        <Typography>Hello, this is my personal website. We&apos;ll see what happens with it!</Typography>
+      </main>
     </>
   )
 }
