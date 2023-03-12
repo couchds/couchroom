@@ -1,10 +1,7 @@
-import { Card, CardContent, SelectProps, Typography } from "@mui/material";
+import { Button, Card, CardActions, CardContent, Typography } from "@mui/material";
+import { AppProps } from "@/globals";
 
-interface AppCardProps {
-  appName: string,
-};
-
-const AppCard: React.FC<AppCardProps> = ({ appName }) => {
+const AppCard: React.FC<AppProps> = ({ appName, appDescription, appHref }) => {
 
   return (
     <>
@@ -13,6 +10,12 @@ const AppCard: React.FC<AppCardProps> = ({ appName }) => {
           <Typography gutterBottom variant="h5" component="div">
             { appName }
           </Typography>
+          <Typography variant="body2" color="text.secondary">
+            { appDescription }
+          </Typography>
+          <CardActions>
+            <Button size="small" href={ appHref }>Go</Button>
+          </CardActions>
         </CardContent>
       </Card>
     </>

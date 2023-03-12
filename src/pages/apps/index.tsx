@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Navbar from '@/components/Navbar';
-import styles from '@/styles/Home.module.css'
 import { Typography } from '@mui/material';
 import AppCard from '@/components/AppCard';
 import { Container } from '@mui/system';
+import { appList } from '@/globals';
 
 export default function Apps() {
   return (
@@ -14,7 +14,11 @@ export default function Apps() {
       <Navbar />
       <Container>
         <Typography variant='h3'>Apps</Typography>
-        <AppCard appName='First App' />
+        {
+          appList.map((app) => 
+            <AppCard key={app.appName} {...app} />
+          )
+        }
       </Container>
     </>
   )
