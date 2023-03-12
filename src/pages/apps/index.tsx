@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Navbar from '@/components/Navbar';
 import styles from '@/styles/Home.module.css'
 import { Typography } from '@mui/material';
+import AppCard from '@/components/AppCard';
+import { Container } from '@mui/system';
 
 export default function Apps() {
   return (
@@ -10,9 +12,10 @@ export default function Apps() {
         <title>Apps</title>
       </Head>
       <Navbar />
-      <main className={styles.main}>
+      <Container>
         <Typography variant='h3'>Apps</Typography>
-      </main>
+        <AppCard appName='First App' />
+      </Container>
     </>
   )
 }
