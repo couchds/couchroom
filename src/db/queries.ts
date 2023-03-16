@@ -1,8 +1,19 @@
 import {Client} from "pg";
 
-export async function getRandomHiragana() {
-  const client = new Client();
+async function newClientConnection(): Promise<Client> {
+  const client = new Client({
+    host: process.env.PG_HOST,
+    user: process.env.PG_USER,
+    password: process.env.PG_PASSWORD,
+    database: process.env.PG_DATABASE
+  });
   await client.connect();
-  const qResult = client.query('SELECT * FROM "Hiragana"" ORDER BY RANDOM() LIMIT 1;');
-  console.log(qResult);
+  return client;
+}
+
+export async function getAllHiragana() {
+  const client = await newClientConnection();
+  const qResult = await client.query('SELECT * FROM "Hiragana";');
+  await client.end();
+  return qResult.rows;
 }
