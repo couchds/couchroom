@@ -1,10 +1,7 @@
 import Head from 'next/head'
 import Navbar from '@/components/Navbar';
-import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import { Container, Typography } from '@mui/material';
-
-const inter = Inter({ subsets: ['latin'] })
+import { Typography } from '@mui/material';
 
 export default function Home() {
   return (

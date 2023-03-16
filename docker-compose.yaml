@@ -13,6 +13,17 @@ services:
       - POSTGRES_USER=postgres
       - PGUSER=postgres
       - POSTGRES_PASSWORD=mysecretpassword
+  web:
+    build:
+      context: ./
+      target: runner
+    volumes:
+      - .:/app
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
 
 volumes:
   postgres:
