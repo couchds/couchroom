@@ -1,11 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Navbar from '@/components/Navbar';
 import styles from '@/styles/Home.module.css'
-import { Container } from '@mui/material';
-import { AppBar } from '@mui/material';
-
-const inter = Inter({ subsets: ['latin'] })
+import { Typography } from '@mui/material';
 
 export default function Home() {
   return (
@@ -16,13 +12,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Navbar />
       <main className={styles.main}>
-        <Container>
-          <AppBar>
-            Couch Room
-          </AppBar>
-          <h1>Hello, this is my personal website. We&apos;ll see what happens with it!</h1>
-        </Container>
+        <Typography>Hello, this is my personal website. We&apos;ll see what happens with it!</Typography>
       </main>
     </>
   )
