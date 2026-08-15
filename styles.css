@@ -1,0 +1,33 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+main {
+  padding-top: 6rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  line-height: 1;
+}
+
+a {
+  color: inherit;
+}
+
+a[aria-current="page"] {
+  font-weight: 700;
+}
